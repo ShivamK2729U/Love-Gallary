@@ -337,12 +337,11 @@
                     const normalizedAngle = ((currentAngle + extraRotation + (index * (360 / totalCards))) % 360 + 360) % 360;
                     if (normalizedAngle > 350 || normalizedAngle < 10) {
                         card.classList.add('active');
+                        card.style.opacity = 1;
                     } else {
                         card.classList.remove('active');
+                        card.style.opacity = 0.4;
                     }
-
-                    const opacity = Math.max(0.2, 1 - Math.abs(normalizedAngle - 180) / 180);
-                    card.style.opacity = opacity;
                 });
             }
 
